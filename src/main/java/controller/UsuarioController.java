@@ -1,4 +1,7 @@
+package controller;
+
 import model.UsuariosModel;
+import repository.UsuarioRepository;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -14,7 +17,7 @@ public class UsuarioController {
         return usuarioRepository.buscarTodos();
     }
 
-    public String remover(Long idUsuarioSelecionado) throws SQLException {
+    public String remover(int idUsuarioSelecionado) throws SQLException {
         UsuariosModel usuario = usuarioRepository.buscarPorId(idUsuarioSelecionado);
         if (usuario != null) {
             return usuarioRepository.remover(usuario);
@@ -23,7 +26,7 @@ public class UsuarioController {
         }
     }
 
-    public UsuariosModel buscarPorId(Long id) {
+    public UsuariosModel buscarPorId(int id) {
         return usuarioRepository.buscarPorId(id);
     }
 }

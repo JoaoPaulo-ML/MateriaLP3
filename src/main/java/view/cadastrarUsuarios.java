@@ -1,3 +1,6 @@
+package view;
+
+import controller.UsuarioController;
 import model.UsuariosModel;
 
 import javax.swing.*;
@@ -12,6 +15,7 @@ public class cadastrarUsuarios extends JFrame {
     private JTextField textFieldEmail;
     private JTextField textFieldSexo;
     private JTextField textFieldNumero;
+
 
     private UsuarioController usuarioController;
 

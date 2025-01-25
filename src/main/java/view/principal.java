@@ -1,3 +1,4 @@
+package view;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -28,11 +29,12 @@ public class principal extends JFrame {
         menubar.add(arquivo);
 
         // Menu Cadastro
-        JMenu areaCadastro = new JMenu("Área de Cadastro");
+        JMenu areaCadastro = new JMenu("CRUD Usuario - Livros");
         JMenuItem cadastrarUsuarios = new JMenuItem("Cadastrar Usuários");
         JMenuItem cadastrarLivros = new JMenuItem("Cadastrar Livros");
-
+        JMenuItem listaUsuario = new JMenuItem("Listar Usuários");
         areaCadastro.add(cadastrarUsuarios);
+        areaCadastro.add(listaUsuario);
         areaCadastro.add(cadastrarLivros);
         menubar.add(areaCadastro);
 
@@ -48,6 +50,13 @@ public class principal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new cadastroLivros();
+            }
+        });
+
+        listaUsuario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new listaUsuario();
             }
         });
     }

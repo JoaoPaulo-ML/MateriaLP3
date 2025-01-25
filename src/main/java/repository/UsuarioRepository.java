@@ -1,3 +1,5 @@
+package repository;
+
 import model.UsuariosModel;
 
 import javax.persistence.EntityManager;
@@ -44,7 +46,8 @@ public class UsuarioRepository {
 
     public List<UsuariosModel> buscarTodos() {
         try {
-            return entityManager.createQuery("from UsuariosModel").getResultList();
+            List<UsuariosModel> usuarios = entityManager.createQuery("from UsuariosModel").getResultList();
+            return usuarios;
         } catch (Exception e) {
             return new ArrayList<>();
         }
@@ -53,16 +56,22 @@ public class UsuarioRepository {
     public String remover(UsuariosModel usuario) {
         try {
             entityManager.getTransaction().begin();
+            // Verificar se o objeto está gerenciado
+            if (!entityManager.contains(usuario)) {
+                usuario = entityManager.merge(usuario); // Faz o merge caso não esteja gerenciado
+            }
             entityManager.remove(usuario);
             entityManager.getTransaction().commit();
             return "Usuário removido com sucesso!";
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
+            e.printStackTrace();
             return "Erro ao remover usuário: " + e.getMessage();
         }
     }
 
-    public UsuariosModel buscarPorId(Long id) {
+
+    public UsuariosModel buscarPorId(int id) {
         try {
             return entityManager.find(UsuariosModel.class, id);
         } catch (Exception e) {
@@ -70,4 +79,5 @@ public class UsuarioRepository {
             return null;
         }
     }
+
 }
