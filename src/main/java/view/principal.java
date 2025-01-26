@@ -31,11 +31,13 @@ public class principal extends JFrame {
         // Menu Cadastro
         JMenu areaCadastro = new JMenu("CRUD Usuario - Livros");
         JMenuItem cadastrarUsuarios = new JMenuItem("Cadastrar Usuários");
-        JMenuItem cadastrarLivros = new JMenuItem("Cadastrar Livros");
+        JMenuItem cadastroLivros = new JMenuItem("Cadastrar Livros");
         JMenuItem listaUsuario = new JMenuItem("Listar Usuários");
+        JMenuItem listaLivros = new JMenuItem("Listar Livros");
         areaCadastro.add(cadastrarUsuarios);
         areaCadastro.add(listaUsuario);
-        areaCadastro.add(cadastrarLivros);
+        areaCadastro.add(cadastroLivros);
+        areaCadastro.add(listaLivros);
         menubar.add(areaCadastro);
 
         // Eventos para abrir janelas específicas
@@ -46,7 +48,7 @@ public class principal extends JFrame {
             }
         });
 
-        cadastrarLivros.addActionListener(new ActionListener() {
+        cadastroLivros.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new cadastroLivros();
@@ -57,6 +59,12 @@ public class principal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new listaUsuario();
+            }
+        });
+        listaLivros.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new listaLivros();
             }
         });
     }

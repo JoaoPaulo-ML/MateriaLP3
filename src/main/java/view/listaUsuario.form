@@ -14,7 +14,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value="Pesquisa titulo"/>
+        </properties>
       </component>
       <component id="50e66" class="javax.swing.JButton" binding="buttonBuscar">
         <constraints>
