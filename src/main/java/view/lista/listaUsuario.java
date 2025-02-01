@@ -19,6 +19,7 @@ public class listaUsuario extends JFrame {
     private JPanel panelPrincipal;
     private JScrollPane scrollPaneUsuario;
 
+
     public listaUsuario() {
         this.setTitle("Lista de Usuários");
         UsuarioModeloDeTabela usuarioModeloDeTabela = new UsuarioModeloDeTabela();
@@ -50,7 +51,7 @@ public class listaUsuario extends JFrame {
                         String mensagem = usuarioController.remover(idUsuarioSelecionado);
                         JOptionPane.showMessageDialog(null, mensagem);
 
-                        // Atualizar tabela com novos dados
+
                         UsuarioModeloDeTabela modeloAtualizado = new UsuarioModeloDeTabela();
                         tableBuscaUsuario.setModel(modeloAtualizado);
                     } catch (SQLException ex) {
@@ -61,6 +62,8 @@ public class listaUsuario extends JFrame {
                 }
             }
         });
+
+
 
     }
 

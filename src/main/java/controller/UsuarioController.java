@@ -13,6 +13,10 @@ public class UsuarioController {
         return usuarioRepository.salvar(usuario);
     }
 
+    public String atualizar(UsuariosModel usuario) throws SQLException {
+        return usuarioRepository.atualizar(usuario);
+    }
+
     public List<UsuariosModel> buscarTodos() throws SQLException {
         return usuarioRepository.buscarTodos();
     }

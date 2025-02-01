@@ -2,6 +2,8 @@ package view;
 
 import view.cadastro.cadastrarUsuarios;
 import view.cadastro.cadastroLivros;
+import view.edicao.edicaoUsuarios;
+import view.edicao.edicaoLivro;
 import view.lista.listaLivros;
 import view.lista.listaUsuario;
 
@@ -13,7 +15,10 @@ public class principal extends JFrame {
     private JPanel jpanel1;
     private JMenuBar menubar;
 
+
     public principal() {
+        jpanel1 = new JPanel();
+
         criacaoDoMenu();
         this.setTitle("Sistema de Gestão de Biblioteca");
         this.setContentPane(jpanel1);
@@ -39,10 +44,15 @@ public class principal extends JFrame {
         JMenuItem cadastroLivros = new JMenuItem("Cadastrar Livros");
         JMenuItem listaUsuario = new JMenuItem("Listar Usuários");
         JMenuItem listaLivros = new JMenuItem("Listar Livros");
+        JMenuItem  edicaoUsuarios = new JMenuItem("edicao Usuários");
+        JMenuItem edicaoLivro = new JMenuItem("edicao Livros");
         areaCadastro.add(cadastrarUsuarios);
         areaCadastro.add(listaUsuario);
         areaCadastro.add(cadastroLivros);
         areaCadastro.add(listaLivros);
+
+        areaCadastro.add(edicaoUsuarios);
+        areaCadastro.add(edicaoLivro);
         menubar.add(areaCadastro);
 
         cadastrarUsuarios.addActionListener(new ActionListener() {
@@ -56,6 +66,19 @@ public class principal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new cadastroLivros();
+            }
+        });
+        edicaoUsuarios.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new edicaoUsuarios();
+            }
+        });
+
+        edicaoLivro.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new edicaoLivro();
             }
         });
 

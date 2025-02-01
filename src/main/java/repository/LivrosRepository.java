@@ -73,4 +73,16 @@ public class LivrosRepository {
             return null;
         }
     }
+
+    public String atualizar(LivrosModel livro) {
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.merge(livro);
+            entityManager.getTransaction().commit();
+            return "Livro atualizado com sucesso.";
+        } catch (Exception e) {
+            entityManager.getTransaction().rollback();
+            return "Erro ao atualizar livro: " + e.getMessage();
+        }
+    }
 }

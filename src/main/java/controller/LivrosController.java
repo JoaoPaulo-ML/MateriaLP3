@@ -13,6 +13,10 @@ public class LivrosController {
         return livrosRepository.salvar(livro);
     }
 
+    public String atualizar(LivrosModel livro) throws SQLException {
+        return livrosRepository.atualizar(livro);
+    }
+
     public List<LivrosModel> buscarTodos() throws SQLException {
         return livrosRepository.buscarTodos();
     }

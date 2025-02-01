@@ -13,6 +13,18 @@ public class UsuariosModel {
     private String numero;
     private String email;
 
+    public UsuariosModel(int id, String nome, String sexo, String numero, String email) {
+        this.id = id;
+        this.nome = nome;
+        this.sexo = sexo;
+        this.numero = numero;
+        this.email = email;
+    }
+
+    public UsuariosModel() {
+
+    }
+
     public int getId() {
         return id;
     }

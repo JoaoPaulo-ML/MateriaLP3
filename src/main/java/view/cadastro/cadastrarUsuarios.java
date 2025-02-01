@@ -15,6 +15,8 @@ public class cadastrarUsuarios extends JFrame {
     private JTextField textFieldEmail;
     private JTextField textFieldSexo;
     private JTextField textFieldNumero;
+    private JTable tableUsuarios;
+    private JScrollPane scrollPaneUsuarios;
 
 
     private UsuarioController usuarioController;
