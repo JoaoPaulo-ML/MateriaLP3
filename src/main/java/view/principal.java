@@ -6,6 +6,11 @@ import view.edicao.edicaoUsuarios;
 import view.edicao.edicaoLivro;
 import view.lista.listaLivros;
 import view.lista.listaUsuario;
+import view.lista.listaEmprestimo;
+import view.lista.listaDevolucao;
+import view.cadastro.CadastrarEmprestimo;
+import view.cadastro.cadastrarDevolucao;
+
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -32,12 +37,44 @@ public class principal extends JFrame {
         this.setJMenuBar(menubar);
 
 
-        JMenu arquivo = new JMenu("Arquivo");
-        JMenuItem sair = new JMenuItem("Sair");
-        sair.addActionListener(e -> System.exit(0));
-        arquivo.add(sair);
+        JMenu arquivo = new JMenu("Emprestimo - Devolucao");
+        JMenuItem CadastrarEmprestimo = new JMenuItem("Fazer emprestimo");
+        JMenuItem cadastrarDevolucao = new JMenuItem("Fazer emprestimo");
+        JMenuItem listaEmprestimo = new JMenuItem("Lista emprestimo");
+        JMenuItem listaDevolucao = new JMenuItem("Lista devolução");
+        arquivo.add(CadastrarEmprestimo);
+        arquivo.add(cadastrarDevolucao);
+        arquivo.add(listaEmprestimo);
+        arquivo.add(listaDevolucao);
         menubar.add(arquivo);
 
+        CadastrarEmprestimo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new CadastrarEmprestimo();
+            }
+        });
+
+        cadastrarDevolucao.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new cadastrarDevolucao();
+            }
+        });
+
+        listaEmprestimo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new listaEmprestimo();
+            }
+        });
+
+        listaDevolucao.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new listaDevolucao();
+            }
+        });
 
         JMenu areaCadastro = new JMenu("CRUD Usuario - Livros");
         JMenuItem cadastrarUsuarios = new JMenuItem("Cadastrar Usuários");

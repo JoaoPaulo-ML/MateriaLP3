@@ -22,6 +22,7 @@ public class cadastrarUsuarios extends JFrame {
     private UsuarioController usuarioController;
 
     public cadastrarUsuarios() {
+
         this.setTitle("Cadastrar Usuários");
         this.setContentPane(jpanelUsuarios);
         this.setSize(640, 480);
